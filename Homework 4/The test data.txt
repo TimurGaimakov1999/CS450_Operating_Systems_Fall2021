@@ -1,0 +1,53 @@
+/***************************************************************************************************************************************************************/
+/* 
+	CS450 Operating System - Fall 21
+	Programming Assignment 4
+	Hassan Alamri 		& 	Timur Gaimakov 
+	halamri@hawk.iit.edu		tgaimakov@hawk.iit.edu
+	A20473047			A20415319
+          
+             
+ */
+/***************************************************************************************************************************************************************/
+
+- Verify the 5 test programs show up when you type ls
+- Before going to the steps please check the screenshots output of the directory with inodes
+
+$ dirWalker
+prints out the names of each file and directory in a file system tree.
+
+$ inTBWalker
+prints out all the allocated inodes.
+
+$ comWalker
+Comparing the inode related output from the two Walkers
+Make sure you have run the dirWalker and inTBWalker before running this otherwise it will show no changes
+
+$ damInode [add inode Number]
+for checking Damaging the FS by Inode number
+
+$ recInode
+Repairing Files
+
+The following sequence will repair any inodes that are damaged:
+$ dirWalker
+$ inTBWalker
+$ comWalker
+$ recInode
+NOTE: RUN ALL THE COMMANDS IN ORDER
+
+TEST PROGRAM
+Here is a sample program that can be used to test the walkers and programs
+
+$ mkdir CS450
+$ mkdir CS450/PA4
+$ dirWalker
+$ inTBWalker
+$ comWalker
+$ damInode [add CS450's inode]
+
+Repair using:
+$ dirWalker
+$ inTBWalker
+$ comWalker
+$ recInode
