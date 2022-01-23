@@ -1,0 +1,74 @@
+==8975== Memcheck, a memory error detector
+==8975== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==8975== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==8975== Command: ./valMemLeak1
+==8975== Parent PID: 2400
+==8975== 
+==8975== Invalid write of size 4
+==8975==    at 0x1091D0: testCase (in /home/hassan/valMemLeak1)
+==8975==    by 0x1092BE: main (in /home/hassan/valMemLeak1)
+==8975==  Address 0x4a55040 is 0 bytes inside a block of size 3 alloc'd
+==8975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8975==    by 0x1091A8: testCase (in /home/hassan/valMemLeak1)
+==8975==    by 0x1092BE: main (in /home/hassan/valMemLeak1)
+==8975== 
+==8975== Conditional jump or move depends on uninitialised value(s)
+==8975==    at 0x48DAAD8: __vfprintf_internal (vfprintf-internal.c:1687)
+==8975==    by 0x48C4EBE: printf (printf.c:33)
+==8975==    by 0x1091FD: testCase (in /home/hassan/valMemLeak1)
+==8975==    by 0x1092BE: main (in /home/hassan/valMemLeak1)
+==8975== 
+==8975== Use of uninitialised value of size 8
+==8975==    at 0x48BE81B: _itoa_word (_itoa.c:179)
+==8975==    by 0x48DA6F4: __vfprintf_internal (vfprintf-internal.c:1687)
+==8975==    by 0x48C4EBE: printf (printf.c:33)
+==8975==    by 0x1091FD: testCase (in /home/hassan/valMemLeak1)
+==8975==    by 0x1092BE: main (in /home/hassan/valMemLeak1)
+==8975== 
+==8975== Conditional jump or move depends on uninitialised value(s)
+==8975==    at 0x48BE82D: _itoa_word (_itoa.c:179)
+==8975==    by 0x48DA6F4: __vfprintf_internal (vfprintf-internal.c:1687)
+==8975==    by 0x48C4EBE: printf (printf.c:33)
+==8975==    by 0x1091FD: testCase (in /home/hassan/valMemLeak1)
+==8975==    by 0x1092BE: main (in /home/hassan/valMemLeak1)
+==8975== 
+==8975== Conditional jump or move depends on uninitialised value(s)
+==8975==    at 0x48DB3A8: __vfprintf_internal (vfprintf-internal.c:1687)
+==8975==    by 0x48C4EBE: printf (printf.c:33)
+==8975==    by 0x1091FD: testCase (in /home/hassan/valMemLeak1)
+==8975==    by 0x1092BE: main (in /home/hassan/valMemLeak1)
+==8975== 
+==8975== Conditional jump or move depends on uninitialised value(s)
+==8975==    at 0x48DA86E: __vfprintf_internal (vfprintf-internal.c:1687)
+==8975==    by 0x48C4EBE: printf (printf.c:33)
+==8975==    by 0x1091FD: testCase (in /home/hassan/valMemLeak1)
+==8975==    by 0x1092BE: main (in /home/hassan/valMemLeak1)
+==8975== 
+==8975== Invalid read of size 4
+==8975==    at 0x1091E6: testCase (in /home/hassan/valMemLeak1)
+==8975==    by 0x1092BE: main (in /home/hassan/valMemLeak1)
+==8975==  Address 0x4a55044 is 1 bytes after a block of size 3 alloc'd
+==8975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8975==    by 0x1091A8: testCase (in /home/hassan/valMemLeak1)
+==8975==    by 0x1092BE: main (in /home/hassan/valMemLeak1)
+==8975== 
+==8975== 
+==8975== HEAP SUMMARY:
+==8975==     in use at exit: 3 bytes in 1 blocks
+==8975==   total heap usage: 2 allocs, 1 frees, 1,027 bytes allocated
+==8975== 
+==8975== 3 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==8975==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8975==    by 0x1091A8: testCase (in /home/hassan/valMemLeak1)
+==8975==    by 0x1092BE: main (in /home/hassan/valMemLeak1)
+==8975== 
+==8975== LEAK SUMMARY:
+==8975==    definitely lost: 3 bytes in 1 blocks
+==8975==    indirectly lost: 0 bytes in 0 blocks
+==8975==      possibly lost: 0 bytes in 0 blocks
+==8975==    still reachable: 0 bytes in 0 blocks
+==8975==         suppressed: 0 bytes in 0 blocks
+==8975== 
+==8975== Use --track-origins=yes to see where uninitialised values come from
+==8975== For lists of detected and suppressed errors, rerun with: -s
+==8975== ERROR SUMMARY: 11 errors from 8 contexts (suppressed: 0 from 0)

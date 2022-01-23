@@ -1,0 +1,39 @@
+==12437== Memcheck, a memory error detector
+==12437== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==12437== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==12437== Command: ./valMemLeak3
+==12437== Parent PID: 2400
+==12437== 
+==12437== Invalid write of size 4
+==12437==    at 0x10924A: testCase (in /home/hassan/valMemLeak3)
+==12437==    by 0x109355: main (in /home/hassan/valMemLeak3)
+==12437==  Address 0x4a55040 is 0 bytes inside a block of size 12 free'd
+==12437==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12437==    by 0x109239: testCase (in /home/hassan/valMemLeak3)
+==12437==    by 0x109355: main (in /home/hassan/valMemLeak3)
+==12437==  Block was alloc'd at
+==12437==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12437==    by 0x1091CC: testCase (in /home/hassan/valMemLeak3)
+==12437==    by 0x109355: main (in /home/hassan/valMemLeak3)
+==12437== 
+==12437== Invalid read of size 4
+==12437==    at 0x109254: testCase (in /home/hassan/valMemLeak3)
+==12437==    by 0x109355: main (in /home/hassan/valMemLeak3)
+==12437==  Address 0x4a55040 is 0 bytes inside a block of size 12 free'd
+==12437==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12437==    by 0x109239: testCase (in /home/hassan/valMemLeak3)
+==12437==    by 0x109355: main (in /home/hassan/valMemLeak3)
+==12437==  Block was alloc'd at
+==12437==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12437==    by 0x1091CC: testCase (in /home/hassan/valMemLeak3)
+==12437==    by 0x109355: main (in /home/hassan/valMemLeak3)
+==12437== 
+==12437== 
+==12437== HEAP SUMMARY:
+==12437==     in use at exit: 0 bytes in 0 blocks
+==12437==   total heap usage: 2 allocs, 2 frees, 1,036 bytes allocated
+==12437== 
+==12437== All heap blocks were freed -- no leaks are possible
+==12437== 
+==12437== For lists of detected and suppressed errors, rerun with: -s
+==12437== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
